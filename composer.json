@@ -1,0 +1,38 @@
+{
+  "name": "andrewblake1/yii2-creditcard",
+  "description": "Yii2 credit card widget with client validation",
+  "type": "yii2-extension",
+  "keywords": [
+    "yii2",
+    "credit",
+    "card",
+    "widget"
+  ],
+  "homepage": "https://github.com/andrewblake1/yii2-credit-card",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Andrew Blake",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/andrewblake1/yii2-credit-card/issues",
+    "source": "https://github.com/andrewblake1/yii2-credit-card"
+  },
+  "require": {
+    "yiisoft/yii2": "~2",
+    "bower-asset/jquery.payment": "~1"
+  },
+  "autoload": {
+    "psr-4": {
+      "andrewblake1\\creditcard\\": ""
+    }
+  },
+  "extra": {
+    "asset-installer-paths": {
+      "npm-asset-library": "vendor/npm",
+      "bower-asset-library": "vendor/bower"
+    }
+  }
+}

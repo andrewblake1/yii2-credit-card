@@ -24,7 +24,7 @@
         // format and mask as the user types
         $this.payment("formatCardNumber")
             // set credit card icon as type
-            // todo: should be on change but working around issue
+            // TODO: should be on change but working around issue https://github.com/stripe/jquery.payment/issues/159
             .on("keyup paste", function () {
                 var ccNumber = $this.val();
                 var type = $.payment.cardType(ccNumber);

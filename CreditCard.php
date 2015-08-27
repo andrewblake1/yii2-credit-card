@@ -2,9 +2,9 @@
 /**
  * @copyright Copyright &copy; 2015 Andrew Blake
  * @package andrewblake1\yii2-credit-card
- * @license http://opensource.org/licenses/MIT MIT License
+ * @license https://github.com/andrewblake1/yii2-credit-card/blob/master/LICENSE.md MIT License
  * @link https://github.com/andrewblake1/yii2-credit-card
- * @version 0.0.1
+ * @version 1.0.0
  */
 namespace andrewblake1\creditcard;
 
@@ -101,8 +101,7 @@ class CreditCard extends Widget
     public function registerTranslations()
     {
         Yii::setAlias("@creditcard", __DIR__);
-        $i18n = Yii::$app->i18n;
-        $i18n->translations['creditcard'] = [
+        Yii::$app->i18n->translations['creditcard'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => 'en-US',
             'basePath' => '@creditcard/messages',
@@ -111,7 +110,7 @@ class CreditCard extends Widget
 
     /**
      * Generate credit card number form field
-     * @param array $fieldConfig any special config and overriding config for the form form field
+     * @param array $fieldConfig any special config and overriding config for the form field
      * @return $this form field html
      */
     public function number($fieldConfig = [])
@@ -136,7 +135,7 @@ class CreditCard extends Widget
 
     /**
      * Generate credit card expiry form field
-     * @param array $fieldConfig any special config and overriding config for the form form field
+     * @param array $fieldConfig any special config and overriding config for the form field
      * @return $this form field html
      */
     public function expiry($fieldConfig = [])
@@ -159,7 +158,7 @@ class CreditCard extends Widget
 
     /**
      * Generate credit card cvc form field
-     * @param array $fieldConfig any special config and overriding config for the form form field
+     * @param array $fieldConfig any special config and overriding config for the form field
      * @return $this form field html
      */
     public function cvc($fieldConfig = [])

@@ -8,6 +8,16 @@ Yii2 Bootstrap 3 component, providing client validated and masked credit card nu
 
 Uses client validation courtesy of Stripe (https://github.com/stripe/jquery.payment) and works with validation in ActiveForm.
 
+Options
+
+- **form** ActiveForm the bootstrap/ActiveForm object.
+- **model** Model (optional) the model containing the credit card attributes to be rendered.
+- **numberAttribute** (only use if **model** is set) string the credit card number attribute within **model**, defaults to 'cardNumber'.
+- **expiryAttribute** (only use if **model** is set) string the credit card expiry attribute within **model**, defaults to 'expiry'.
+- **cvcAttribute** (only use if **model** is set) string the credit card CVC/CSC/CVV attribute within **model**, defaults to 'cvCode'.
+
+In addition, the methods number(), expiry(), and cvc() accept an optional field configuration array as used by yii\bootstrap\ActiveForm::field. Use 'id' cautiously as this is auto-generated and used internally by validation which will likely stop working if id is set incorrectly.
+
 ### The future
 
 1. Integrate first with Braintree and potentially Stripe e.g. any requirements to encode the fields when posting request etc.
@@ -54,7 +64,6 @@ use andrewblake1\creditcard\CreditCard;
   </div>
 <?php ActiveForm::end() ?>
 ```
-
 ## License
 
 **yii2-credit-card** is released under the MIT License. See the bundled `LICENSE.md` for details.

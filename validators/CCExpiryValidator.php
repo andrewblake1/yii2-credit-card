@@ -30,7 +30,8 @@ class CCExpiryValidator extends Validator
     {
         $message = json_encode($this->message, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
         return new JsExpression("
-            if (!$.payment.validateCardExpiry(value)) {
+            var expiry = $.payment.cardExpiryVal(value);
+            if (!$.payment.validateCardExpiry(expiry.month, expiry.year)) {
                 messages.push($message);
             }
         ");

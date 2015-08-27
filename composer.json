@@ -22,7 +22,8 @@
   },
   "require": {
     "yiisoft/yii2": "~2",
-    "bower-asset/jquery.payment": "~1"
+    "bower-asset/jquery.payment": "~1",
+    "bower-asset/font-awesome": "4.*@stable"
   },
   "autoload": {
     "psr-4": {

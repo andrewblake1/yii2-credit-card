@@ -12,11 +12,11 @@ Options
 
 - **form** ActiveForm the bootstrap/ActiveForm object.
 - **model** Model (optional) the model containing the credit card attributes to be rendered.
-- **numberAttribute** (only use if **model** is set) string the credit card number attribute within **model**, defaults to 'cardNumber'.
-- **expiryAttribute** (only use if **model** is set) string the credit card expiry attribute within **model**, defaults to 'expiry'.
-- **cvcAttribute** (only use if **model** is set) string the credit card CVC/CSC/CVV attribute within **model**, defaults to 'cvCode'.
+- **numberAttribute** (only used if **model** is set) string the credit card number attribute within **model**, defaults to 'cardNumber'.
+- **expiryAttribute** (only used if **model** is set) string the credit card expiry attribute within **model**, defaults to 'expiry'.
+- **cvcAttribute** (only used if **model** is set) string the credit card CVC/CSC/CVV attribute within **model**, defaults to 'cvCode'.
 
-In addition, the methods number(), expiry(), and cvc() accept an optional field configuration array as used by yii\bootstrap\ActiveForm::field. Use 'id' cautiously as this is auto-generated and used internally by validation which will likely stop working if id is set incorrectly.
+In addition, the methods number(), expiry(), and cvc() accept an optional field configuration array as used by yii\bootstrap\ActiveForm::field. Use **id** cautiously as this is auto-generated and used internally by validation which will likely stop working if set incorrectly.
 
 ### The future
 

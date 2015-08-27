@@ -4,7 +4,7 @@ yii2-credit-card
 [![Latest Stable Version](https://poser.pugx.org/andrewblake1/yii2-credit-card/v/stable)](https://packagist.org/packages/andrewblake1/yii2-credit-card)
 [![License](https://poser.pugx.org/andrewblake1/yii2-credit-card/license)](https://packagist.org/packages/andrewblake1/yii2-credit-card)
 
-Yii2 Bootstrap 3 component, providing client validated and masked credit card number, expiry and cvc code fields with credit card icon changing to match credit card type when detectable.
+Yii2 Bootstrap 3 component, providing client validated and masked credit card number, expiry and cvc fields with credit card icon changing to match credit card type when detectable.
 
 Uses client validation courtesy of Stripe (https://github.com/stripe/jquery.payment) and works with validation in ActiveForm.
 

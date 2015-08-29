@@ -11,17 +11,8 @@ Uses client validation courtesy of Stripe (https://github.com/stripe/jquery.paym
 Options
 
 - **form** ActiveForm the bootstrap/ActiveForm object.
-<<<<<<< HEAD
 
 In addition, the methods number(), expiry(), and cvc() accept an optional field configuration array as used by yii\bootstrap\ActiveForm::field.
-=======
-- **model** Model (optional) the model containing the credit card attributes to be rendered.
-- **numberAttribute** (only used if **model** is set) string the credit card number attribute within **model**, defaults to 'cardNumber'.
-- **expiryAttribute** (only used if **model** is set) string the credit card expiry attribute within **model**, defaults to 'expiry'.
-- **cvcAttribute** (only used if **model** is set) string the credit card CVC/CSC/CVV attribute within **model**, defaults to 'cvCode'.
-
-In addition, the methods number(), expiry(), and cvc() accept an optional field configuration array as used by yii\bootstrap\ActiveForm::field. Use **id** cautiously as this is auto-generated and used internally by validation which will likely stop working if set incorrectly.
->>>>>>> origin/master
 
 ### The future
 
@@ -50,11 +41,7 @@ to the `require` section of your `composer.json` file.
 
 ## Latest Release
 
-<<<<<<< HEAD
 > NOTE: The latest version of the module is v1.0.1. Refer the [CHANGE LOG](https://github.com/andrewblake1/yii2-credit-card/blob/master/CHANGE.md) for details.
-=======
-> NOTE: The latest version of the module is v1.0.0. Refer the [CHANGE LOG](https://github.com/andrewblake1/yii2-credit-card/blob/master/CHANGE.md) for details.
->>>>>>> origin/master
 
 ## Usage in view
 

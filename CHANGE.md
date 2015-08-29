@@ -1,3 +1,10 @@
+version 1.0.1
+=============
+**Date:** 29-Aug-2015
+
+1. Swapped DynamicModel for Model
+2. Removed options for providing model and custom naming of attributes
+
 version 1.0.0
 =============
 **Date:** 27-Aug-2015

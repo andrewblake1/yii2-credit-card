@@ -4,7 +4,7 @@
  * @package andrewblake1\yii2-credit-card
  * @license https://github.com/andrewblake1/yii2-credit-card/blob/master/LICENSE.md MIT License
  * @link https://github.com/andrewblake1/yii2-credit-card
- * @version 1.0.1
+ * @version 1.0.2
  */
 namespace andrewblake1\creditcard;
 
@@ -37,17 +37,28 @@ use yii\helpers\Html;
  */
 class CreditCard extends Widget
 {
-    /**
-     * @var ActiveForm the bootstrap/ActiveForm object.
-     */
+    /** @var ActiveForm the bootstrap/ActiveForm object */
     public $form;
+
+    /** @var string Credit card number attribute name */
+    public $numberAttribute = 'creditCard_number';
+
+    /** @var string Credit card expiry attribute name */
+    public $expiryAttribute = 'creditCard_expirationDate';
+
+    /** @var string Credit card cvc/cvv/ccv attribute name */
+    public $cvcAttribute = 'creditCard_cvv';
 
     private $model;
 
     public function init()
     {
         parent::init();
-        $this->model = new CreditCardModel();
+        $this->model = new CreditCardModel([
+            'numberAttribute' => $this->numberAttribute,
+            'expiryAttribute' => $this->expiryAttribute,
+            'cvcAttribute' => $this->cvcAttribute,
+        ]);
         $this->checkConfig();
         $this->registerTranslations();
         CreditCardAsset::register($this->view);
@@ -80,13 +91,13 @@ class CreditCard extends Widget
             ],
         ], $fieldConfig);
         // ensure id is correct and consistent with validation attribute in active form
-        $fieldConfig['inputOptions']['id'] = Html::getInputId($this->model, 'cardNumber');
+        $fieldConfig['inputOptions']['id'] = Html::getInputId($this->model, $this->numberAttribute);
 
         // bind event handlers
         $this->view->registerJs("jQuery('#{$fieldConfig['inputOptions']['id']}').ccNumber();");
 
         // build the field
-        return $this->form->field($this->model, 'cardNumber', $fieldConfig)->textInput();
+        return $this->form->field($this->model, $this->numberAttribute, $fieldConfig)->textInput();
     }
 
     /**
@@ -104,13 +115,13 @@ class CreditCard extends Widget
             ],
         ], $fieldConfig);
         // ensure id is correct and consistent with validation attribute in active form
-        $fieldConfig['inputOptions']['id'] = Html::getInputId($this->model, 'expiry');
+        $fieldConfig['inputOptions']['id'] = Html::getInputId($this->model, $this->expiryAttribute);
 
         // Mask credit card expiry using stripes https://github.com/stripe/jquery.payment
          $this->view->registerJs("jQuery('#{$fieldConfig['inputOptions']['id']}').payment('formatCardExpiry');");
 
         // build the field
-        return $this->form->field($this->model, 'expiry', $fieldConfig)->textInput();
+        return $this->form->field($this->model, $this->expiryAttribute, $fieldConfig)->textInput();
     }
 
     /**
@@ -127,13 +138,13 @@ class CreditCard extends Widget
             ],
         ], $fieldConfig);
         // ensure id is correct and consistent with validation attribute in active form
-        $fieldConfig['inputOptions']['id'] = Html::getInputId($this->model, 'cvc');
+        $fieldConfig['inputOptions']['id'] = Html::getInputId($this->model, $this->cvcAttribute);
 
         // Mask credit card CVC/CVV/CSC (security verification code) using stripes https://github.com/stripe/jquery.payment
         $this->view->registerJs("jQuery('#{$fieldConfig['inputOptions']['id']}').payment('formatCardCVC');");
 
         // build the field
-        return $this->form->field($this->model, 'cvc', $fieldConfig)->textInput();
+        return $this->form->field($this->model, $this->cvcAttribute, $fieldConfig)->textInput();
     }
 
     /**

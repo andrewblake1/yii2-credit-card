@@ -1,3 +1,9 @@
+version 1.0.2
+=============
+**Date:** 29-Aug-2015
+
+1. Added numberAttribute, expiryAttribute, and cvcAttribute public properties in order to use with tuyakhov\yii2-braintree extension
+
 version 1.0.1
 =============
 **Date:** 29-Aug-2015

@@ -4,7 +4,7 @@
  * @package andrewblake1\yii2-credit-card
  * @license http://opensource.org/licenses/MIT MIT License
  * @link https://github.com/andrewblake1/yii2-credit-card
- * @version 1.0.1
+ * @version 1.0.2
  */
 namespace andrewblake1\creditcard\models;
 
@@ -21,30 +21,46 @@ use Yii;
  */
 class CreditCardModel extends Model
 {
-    public $cardNumber;
-    public $expiry;
-    public $cvc;
+    public $numberAttribute;
+
+    public $expiryAttribute;
+
+    public $cvcAttribute;
+
+    public $dynamicAttributes = [];
 
     public function formName() {
-        return 'CreditCard';
+        return 'BraintreeForm';
+    }
+
+    public function __get($name) {
+        if (!isset($this->dynamicAttributes[$name])) {
+            $this->dynamicAttributes[$name] = null;
+        }
+
+        return $this->dynamicAttributes[$name];
+    }
+
+    public function __set($name, $value) {
+        $this->dynamicAttributes[$name] = $value;
     }
 
     public function rules()
     {
         return [
-            [['cardNumber', 'expiry', 'cvc'], 'required'],
-            [['cardNumber'], CCNumberValidator::className()],
-            [['expiry'], CCExpiryValidator::className()],
-            [['cvc'], CCCVCodeValidator::className()],
+            [[$this->numberAttribute, $this->expiryAttribute, $this->cvcAttribute], 'required'],
+            [[$this->numberAttribute], CCNumberValidator::className()],
+            [[$this->expiryAttribute], CCExpiryValidator::className()],
+            [[$this->cvcAttribute], CCCVCodeValidator::className()],
         ];
     }
 
     public function attributeLabels()
     {
         return [
-            'cardNumber' => Yii::t('creditcard', 'Card number'),
-            'expiry' => Yii::t('creditcard', 'Expiry'),
-            'cvc' => Yii::t('creditcard', 'CV Code'),
+            $this->numberAttribute => Yii::t('creditcard', 'Card number'),
+            $this->expiryAttribute => Yii::t('creditcard', 'Expiry'),
+            $this->cvcAttribute => Yii::t('creditcard', 'CV Code'),
         ];
     }
 }

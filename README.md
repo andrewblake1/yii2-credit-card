@@ -44,7 +44,6 @@ or add
 
 to the `require` section of your `composer.json` file.
 
-
 ## Latest Release
 
 > NOTE: The latest version of the module is v1.0.2. Refer the [CHANGE LOG](https://github.com/andrewblake1/yii2-credit-card/blob/master/CHANGE.md) for details.

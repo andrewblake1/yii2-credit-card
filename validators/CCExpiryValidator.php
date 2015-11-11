@@ -8,6 +8,7 @@
  */
 namespace andrewblake1\creditcard\validators;
 
+use kartik\base\TranslationTrait;
 use yii\validators\Validator;
 use yii\web\JsExpression;
 use Yii;
@@ -20,9 +21,23 @@ use Yii;
  */
 class CCExpiryValidator extends Validator
 {
+    use TranslationTrait;
+
+    /**
+     * @var array the the internalization configuration for this widget
+     */
+    public $i18n = [];
+
+    /**
+     * @var string translation message file category name for i18n
+     */
+    protected $_msgCat = '';
+
     public function init()
     {
         parent::init();
+        $this->_msgCat = 'creditcard';
+        $this->initI18N(__DIR__);
         $this->message = Yii::t('creditcard', 'Invalid expiry.');
     }
 

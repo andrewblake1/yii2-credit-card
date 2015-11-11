@@ -62,4 +62,28 @@
         return this;
     }
 
+    /**
+     * Mask credit card expiry date
+     *
+     * Using stripes https://github.com/stripe/jquery.payment
+     *
+     * @returns {$.fn}
+     */
+    $.fn.ccExpiry = function () {
+        $(this).payment("formatCardExpiry");
+        return this;
+    }
+
+    /**
+     * Mask credit card cvc
+     *
+     * Using stripes https://github.com/stripe/jquery.payment
+     *
+     * @returns {$.fn}
+     */
+    $.fn.ccCVC = function () {
+        $(this).payment("formatCardCVC");
+        return this;
+    }
+
 }(jQuery));

@@ -1,3 +1,9 @@
+version 1.0.3
+=============
+**Date:** 22-Mar-2016
+
+1. Fixed urgent issue with ActiveField version 2.0
+
 version 1.0.2
 =============
 **Date:** 29-Aug-2015

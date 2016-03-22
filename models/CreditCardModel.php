@@ -1,17 +1,17 @@
 <?php
 /**
  * @copyright Copyright &copy; 2015 Andrew Blake
- * @package andrewblake1\yii2-credit-card
+ * @package havryliv\yii2-credit-card
  * @license http://opensource.org/licenses/MIT MIT License
- * @link https://github.com/andrewblake1/yii2-credit-card
- * @version 1.0.2
+ * @link https://github.com/havryliv/yii2-credit-card
+ * @version 1.0.3
  */
-namespace andrewblake1\creditcard\models;
+namespace havryliv\creditcard\models;
 
 use yii\base\Model;
-use andrewblake1\creditcard\validators\CCNumberValidator;
-use andrewblake1\creditcard\validators\CCExpiryValidator;
-use andrewblake1\creditcard\validators\CCCVCodeValidator;
+use havryliv\creditcard\validators\CCNumberValidator;
+use havryliv\creditcard\validators\CCExpiryValidator;
+use havryliv\creditcard\validators\CCCVCodeValidator;
 use Yii;
 
 /**

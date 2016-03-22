@@ -1,12 +1,12 @@
 <?php
 /**
  * @copyright Copyright &copy; 2015 Andrew Blake
- * @package andrewblake1\yii2-credit-card
+ * @package havryliv\yii2-credit-card
  * @license http://opensource.org/licenses/MIT MIT License
- * @link https://github.com/andrewblake1/yii2-credit-card
+ * @link https://github.com/havryliv/yii2-credit-card
  * @version 0.0.1
  */
-namespace andrewblake1\creditcard\validators;
+namespace havryliv\creditcard\validators;
 
 use kartik\base\TranslationTrait;
 use yii\validators\Validator;

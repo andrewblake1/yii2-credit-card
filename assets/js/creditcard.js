@@ -1,9 +1,9 @@
 /**
  * @copyright Copyright &copy; 2015 Andrew Blake
- * @package andrewblake1\yii2-credit-card
+ * @package havryliv\yii2-credit-card
  * @license http://opensource.org/licenses/MIT MIT License
- * @link https://github.com/andrewblake1/yii2-credit-card
- * @version 1.0.2
+ * @link https://github.com/havryliv/yii2-credit-card
+ * @version 1.0.3
  */
 (function($) {
 

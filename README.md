@@ -1,8 +1,8 @@
 yii2-credit-card
 ======================
 
-[![Latest Stable Version](https://poser.pugx.org/andrewblake1/yii2-credit-card/v/stable)](https://packagist.org/packages/andrewblake1/yii2-credit-card)
-[![License](https://poser.pugx.org/andrewblake1/yii2-credit-card/license)](https://packagist.org/packages/andrewblake1/yii2-credit-card)
+[![Latest Stable Version](https://poser.pugx.org/havryliv/yii2-credit-card/v/stable)](https://packagist.org/packages/havryliv/yii2-credit-card)
+[![License](https://poser.pugx.org/havryliv/yii2-credit-card/license)](https://packagist.org/packages/havryliv/yii2-credit-card)
 
 Yii2 Bootstrap 3 component, providing client validated and masked credit card number, expiry and cvc fields with credit card icon changing to match credit card type when detectable.
 
@@ -28,32 +28,32 @@ In addition, the methods number(), expiry(), and cvc() accept an optional field 
 
 ## Installation
 
-The preferred way to install this extension is through [composer](http://getcomposer.org/download/). Check the [composer.json](https://github.com/andrewblake1/yii2-credit-card/blob/master/composer.json) for this extension's requirements and dependencies. Read this [web tip /wiki](http://webtips.krajee.com/setting-composer-minimum-stability-application/) on setting the `minimum-stability` settings for your application's composer.json.
+The preferred way to install this extension is through [composer](http://getcomposer.org/download/). Check the [composer.json](https://github.com/havryliv/yii2-credit-card/blob/master/composer.json) for this extension's requirements and dependencies. Read this [web tip /wiki](http://webtips.krajee.com/setting-composer-minimum-stability-application/) on setting the `minimum-stability` settings for your application's composer.json.
 
 To install
 
 ```
-$ php composer.phar require andrewblake1/yii2-credit-card "@dev"
+$ php composer.phar require havryliv/yii2-credit-card "~1.0.3"
 ```
 
 or add
 
 ```
-"andrewblake1/yii2-credit-card": "@dev"
+"havryliv/yii2-credit-card": "~1.0.3"
 ```
 
 to the `require` section of your `composer.json` file.
 
 ## Latest Release
 
-> NOTE: The latest version of the module is v1.0.2. Refer the [CHANGE LOG](https://github.com/andrewblake1/yii2-credit-card/blob/master/CHANGE.md) for details.
+> NOTE: The latest version of the module is v1.0.3. Refer the [CHANGE LOG](https://github.com/havryliv/yii2-credit-card/blob/master/CHANGE.md) for details.
 
 ## Usage in view
 
 ```php
 <?php
 use yii\bootstrap\ActiveForm;
-use andrewblake1\creditcard\CreditCard;
+use havryliv\creditcard\CreditCard;
 ?>
 
 <?php $form = ActiveForm::begin() ?>

@@ -83,7 +83,7 @@ class CreditCard extends Widget
     {
         // default field configuration
         $fieldConfig = ArrayHelper::merge([
-            'inputTemplate' => '<div class="input-group"><span class="input-group-addon"><i class="fa fa-lg fa-credit-card"></i></span>{input}</div>',
+            'template' => '<div class="input-group"><span class="input-group-addon"><i class="fa fa-lg fa-credit-card"></i></span>{input}</div>',
             'inputOptions' => [
                 'type' => 'tel',
                 'autocomplete' => 'cc-number',

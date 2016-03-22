@@ -23,7 +23,8 @@
   "require": {
     "yiisoft/yii2": "~2",
     "bower-asset/jquery.payment": "~1",
-    "bower-asset/font-awesome": "4.*@stable"
+    "bower-asset/font-awesome": "4.*@stable",
+    "kartik-v/yii2-krajee-base": "*"
   },
   "autoload": {
     "psr-4": {

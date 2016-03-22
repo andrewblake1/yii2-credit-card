@@ -33,20 +33,20 @@ The preferred way to install this extension is through [composer](http://getcomp
 To install
 
 ```
-$ php composer.phar require andrewblake1/yii2-credit-card "@dev"
+$ php composer.phar require havryliv/yii2-credit-card "~1.0.3"
 ```
 
 or add
 
 ```
-"andrewblake1/yii2-credit-card": "@dev"
+"havryliv/yii2-credit-card": "~1.0.3"
 ```
 
 to the `require` section of your `composer.json` file.
 
 ## Latest Release
 
-> NOTE: The latest version of the module is v1.0.2. Refer the [CHANGE LOG](https://github.com/andrewblake1/yii2-credit-card/blob/master/CHANGE.md) for details.
+> NOTE: The latest version of the module is v1.0.3. Refer the [CHANGE LOG](https://github.com/havryliv/yii2-credit-card/blob/master/CHANGE.md) for details.
 
 ## Usage in view
 

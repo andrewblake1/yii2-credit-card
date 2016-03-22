@@ -1,3 +1,10 @@
+version 1.0.3
+=============
+**Date:** 23-Mar-2016
+
+1. Added classes CreditCardCVCode, CreditCardExpiry, and CreditCardNumber. These extend from \kartik\base\InputWidget and
+   are used as per README documentation.
+
 version 1.0.2
 =============
 **Date:** 29-Aug-2015

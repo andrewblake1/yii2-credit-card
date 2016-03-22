@@ -4,21 +4,9 @@ yii2-credit-card
 [![Latest Stable Version](https://poser.pugx.org/andrewblake1/yii2-credit-card/v/stable)](https://packagist.org/packages/andrewblake1/yii2-credit-card)
 [![License](https://poser.pugx.org/andrewblake1/yii2-credit-card/license)](https://packagist.org/packages/andrewblake1/yii2-credit-card)
 
-Yii2 Bootstrap 3 component, providing client validated and masked credit card number, expiry and cvc fields with credit card icon changing to match credit card type when detectable.
+Yii2 Bootstrap 3 components, providing client validated and masked credit card number, expiry and cvc fields with credit card icon changing to match credit card type when detectable.
 
 Uses client validation courtesy of Stripe (https://github.com/stripe/jquery.payment) and works with validation in ActiveForm.
-
-Options
-
-- **form** ActiveForm the bootstrap/ActiveForm object, *required*.
-
-- **numberAttribute** string Credit card number attribute name, *defaults to 'creditCard_number'*.
-
-- **expiryAttribute** string Credit card number expiry attribute name, *defaults to 'creditCard_expirationDate'*.
-
-- **cvcAttribute** string Credit card cvc/cvv/ccv  attribute name, *defaults to 'creditCard_cvv'*.
-
-In addition, the methods number(), expiry(), and cvc() accept an optional field configuration array as used by yii\bootstrap\ActiveForm::field.
 
 ### The future
 
@@ -46,23 +34,34 @@ to the `require` section of your `composer.json` file.
 
 ## Latest Release
 
-> NOTE: The latest version of the module is v1.0.2. Refer the [CHANGE LOG](https://github.com/andrewblake1/yii2-credit-card/blob/master/CHANGE.md) for details.
+> NOTE: The latest version of the module is v1.0.3. Refer the [CHANGE LOG](https://github.com/andrewblake1/yii2-credit-card/blob/master/CHANGE.md) for details.
 
 ## Usage in view
+
+Note that the input names here have been chosen to fit work with the tuyakhov\braintree extension
 
 ```php
 <?php
 use yii\bootstrap\ActiveForm;
-use andrewblake1\creditcard\CreditCard;
+use andrewblake1\creditcard\CreditCardNumber;
+use andrewblake1\creditcard\CreditCardExpiry;
+use andrewblake1\creditcard\CreditCardCVCode;
 ?>
 
 <?php $form = ActiveForm::begin() ?>
-  <div class="container">
-      <?php $creditCard = new CreditCard(['form' => $form]);?>
-      <div class="row"><div class="col-xs-12"><?= $creditCard->number() ?></div></div>
-      <div class="row"><div class="col-xs-12"><?= $creditCard->expiry() ?></div></div>
-      <div class="row"><div class="col-xs-12"><?= $creditCard->cvc() ?></div></div>
-  </div>
+    <div class="container">
+        <div id="card" class="row">
+            <div class="col-xs-7">
+                <?= $form->field($bookingForm, 'creditCard_number')->widget(CreditCardNumber::className(), ['name' => 'creditCard_number',]) ?>
+            </div>
+            <div class="col-xs-3">
+                <?= $form->field($bookingForm, 'creditCard_expirationDate')->widget(CreditCardExpiry::className(), ['name' => 'creditCard_expirationDate',]) ?>
+            </div>
+            <div class="col-xs-2">
+                <?= $form->field($bookingForm, 'creditCard_cvv')->widget(CreditCardCVCode::className(), ['name' => 'creditCard_cvv',]) ?>
+            </div>
+        </div>
+    </div>
 <?php ActiveForm::end() ?>
 ```
 ## License

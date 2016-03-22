@@ -1,8 +1,8 @@
 yii2-credit-card
 ======================
 
-[![Latest Stable Version](https://poser.pugx.org/andrewblake1/yii2-credit-card/v/stable)](https://packagist.org/packages/andrewblake1/yii2-credit-card)
-[![License](https://poser.pugx.org/andrewblake1/yii2-credit-card/license)](https://packagist.org/packages/andrewblake1/yii2-credit-card)
+[![Latest Stable Version](https://poser.pugx.org/havryliv/yii2-credit-card/v/stable)](https://packagist.org/packages/havryliv/yii2-credit-card)
+[![License](https://poser.pugx.org/havryliv/yii2-credit-card/license)](https://packagist.org/packages/havryliv/yii2-credit-card)
 
 Yii2 Bootstrap 3 component, providing client validated and masked credit card number, expiry and cvc fields with credit card icon changing to match credit card type when detectable.
 
@@ -28,7 +28,7 @@ In addition, the methods number(), expiry(), and cvc() accept an optional field 
 
 ## Installation
 
-The preferred way to install this extension is through [composer](http://getcomposer.org/download/). Check the [composer.json](https://github.com/andrewblake1/yii2-credit-card/blob/master/composer.json) for this extension's requirements and dependencies. Read this [web tip /wiki](http://webtips.krajee.com/setting-composer-minimum-stability-application/) on setting the `minimum-stability` settings for your application's composer.json.
+The preferred way to install this extension is through [composer](http://getcomposer.org/download/). Check the [composer.json](https://github.com/havryliv/yii2-credit-card/blob/master/composer.json) for this extension's requirements and dependencies. Read this [web tip /wiki](http://webtips.krajee.com/setting-composer-minimum-stability-application/) on setting the `minimum-stability` settings for your application's composer.json.
 
 To install
 
@@ -53,7 +53,7 @@ to the `require` section of your `composer.json` file.
 ```php
 <?php
 use yii\bootstrap\ActiveForm;
-use andrewblake1\creditcard\CreditCard;
+use havryliv\creditcard\CreditCard;
 ?>
 
 <?php $form = ActiveForm::begin() ?>

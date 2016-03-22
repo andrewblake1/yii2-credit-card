@@ -1,12 +1,12 @@
 <?php
 /**
  * @copyright Copyright &copy; 2015 Andrew Blake
- * @package andrewblake1\yii2-credit-card
- * @license https://github.com/andrewblake1/yii2-credit-card/blob/master/LICENSE.md MIT License
- * @link https://github.com/andrewblake1/yii2-credit-card
- * @version 1.0.2
+ * @package havryliv\yii2-credit-card
+ * @license https://github.com/havryliv/yii2-credit-card/blob/master/LICENSE.md MIT License
+ * @link https://github.com/havryliv/yii2-credit-card
+ * @version 1.0.3
  */
-namespace andrewblake1\creditcard;
+namespace havryliv\creditcard;
 
 use Yii;
 use yii\helpers\ArrayHelper;

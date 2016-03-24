@@ -7,19 +7,19 @@ use yii\web\AssetBundle;
 
 class CreditCardAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/';
+    public $depends = [
+        'yii\web\JqueryAsset',
+        'andrewblake1\creditcard\JqueryPaymentAsset',
+        'andrewblake1\creditcard\FontAwesomeAsset',
+    ];
+
+    public $sourcePath = '@andrewblake1/creditcard/assets';
 
     public $css = [
-         'bower/font-awesome/css/font-awesome.css',
-         'andrewblake1/yii2-credit-card/assets/css/creditcard.css',
+        'css/creditcard.css',
     ];
 
     public $js = [
-        'bower/jquery.payment/lib/jquery.payment.js',
-        'andrewblake1/yii2-credit-card/assets/js/creditcard.js',
-    ];
-
-    public $depends = [
-        'yii\web\JqueryAsset',
+        'js/creditcard.js',
     ];
 }

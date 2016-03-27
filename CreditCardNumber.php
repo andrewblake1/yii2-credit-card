@@ -36,6 +36,12 @@ class CreditCardNumber extends \kartik\base\InputWidget
     public $addonOptions = [];
 
     /**
+     * @var string use [[right]] or [[left]] type of addon
+     * position near to input
+     */
+    public $addonPosition = 'right';
+
+    /**
      * @var array HTML attributes for the input group container
      */
     public $containerOptions = [];
@@ -97,7 +103,16 @@ class CreditCardNumber extends \kartik\base\InputWidget
         if (isset($this->size)) {
             Html::addCssClass($this->containerOptions, 'input-group-' . $this->size);
         }
-        return $this->getInput('textInput') . $addon;
+        switch($this->addonPosition) {
+            default:
+            case 'left':
+                return $addon . $this->getInput('textInput');
+                break;
+
+            case 'right':
+                return $this->getInput('textInput') . $addon;
+                break;
+        }
     }
 
     public function registerAssets()

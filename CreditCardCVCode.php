@@ -18,7 +18,7 @@ use yii\helpers\Html;
  *
  * @author Andrew Blake <admin@newzealandfishing.com>
  */
-class CreditCardNumber extends \kartik\base\InputWidget
+class CreditCardCVCode extends \kartik\base\InputWidget
 {
     /**
      * @var string/boolean the addon content
@@ -34,6 +34,12 @@ class CreditCardNumber extends \kartik\base\InputWidget
      *   default to ['class' => 'btn btn-default']
      */
     public $addonOptions = [];
+
+    /**
+     * @var string use [[right]] or [[left]] type of addon
+     * position near to input
+     */
+    public $addonPosition = 'right';
 
     /**
      * @var array HTML attributes for the input group container
@@ -97,7 +103,16 @@ class CreditCardNumber extends \kartik\base\InputWidget
         if (isset($this->size)) {
             Html::addCssClass($this->containerOptions, 'input-group-' . $this->size);
         }
-        return $this->getInput('textInput') . $addon;
+        switch($this->addonPosition) {
+            default:
+            case 'left':
+                return $addon . $this->getInput('textInput');
+                break;
+
+            case 'right':
+                return $this->getInput('textInput') . $addon;
+                break;
+        }
     }
 
     public function registerAssets()

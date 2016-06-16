@@ -1,9 +1,9 @@
-version 1.0.0
+version 1.1.0
 =============
 **Date:** 23-Mar-2016
 
-1. Possible BC: Changed CreditCardModel for just CreditCard. Re-factored a little within here.
-2. Remove default placeholder form each of the fields as can be added in in standard way within Options.
+1. BC: Changed CreditCardModel for just CreditCard. Re-factored a little within here.
+2. Remove default placeholder from each of the fields as can be added in in standard way within Options.
 3. Modified code so that if addon is empty for each field then isn't added.
 
 version 1.0.3

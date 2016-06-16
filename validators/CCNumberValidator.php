@@ -4,7 +4,7 @@
  * @package andrewblake1\yii2-credit-card
  * @license http://opensource.org/licenses/MIT MIT License
  * @link https://github.com/andrewblake1/yii2-credit-card
- * @version 1.0.3
+ * @version 1.1.0
  */
 namespace andrewblake1\creditcard\validators;
 
@@ -37,7 +37,7 @@ class CCNumberValidator extends Validator
     {
         parent::init();
         $this->initI18N(__DIR__);
-        $this->message = Yii::t('creditcard', 'Invalid card number.');
+        $this->message = Yii::t('creditcard', 'Card number is invalid.');
     }
 
     public function clientValidateAttribute($model, $attribute, $view)

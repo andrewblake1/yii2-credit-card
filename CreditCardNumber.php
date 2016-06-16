@@ -4,7 +4,7 @@
  * @package andrewblake1\yii2-credit-card
  * @license https://github.com/andrewblake1/yii2-credit-card/blob/master/LICENSE.md MIT License
  * @link https://github.com/andrewblake1/yii2-credit-card
- * @version 1.0.3
+ * @version 1.1.0
  */
 namespace andrewblake1\creditcard;
 
@@ -36,13 +36,18 @@ class CreditCardNumber extends \kartik\base\InputWidget
     public $addonOptions = [];
 
     /**
+     * @var string use [[right]] or [[left]] type of addon
+     * position near to input
+     */
+    public $addonPosition = 'right';
+
+    /**
      * @var array HTML attributes for the input group container
      */
     public $containerOptions = [];
 
     public $type = 'tel';
     public $autocomplete = 'cc-number';
-    public $placeholder = null;     // set to empty string if wish to be empty
 
     public function init()
     {
@@ -52,12 +57,13 @@ class CreditCardNumber extends \kartik\base\InputWidget
 
         $this->options['type'] = $this->type;
         $this->options['autocomplete'] = $this->autocomplete;
-        $this->options['placeholder'] = ($this->placeholder === null)
-            ? Yii::t('creditcard', 'Card number')
-            : $this->placeholder;
 
         $this->registerAssets();
-        echo Html::tag('div', $this->renderInput(), $this->containerOptions);
+    }
+
+    public function run()
+    {
+       return Html::tag('div', $this->renderInput(), $this->containerOptions);
     }
 
     /**
@@ -93,11 +99,22 @@ class CreditCardNumber extends \kartik\base\InputWidget
             Html::addCssClass($this->addonOptions, 'input-group-addon picker');
             $content = $this->addon;
         }
-        $addon = Html::tag('span', $content, $this->addonOptions);
+        $addon = $this->addon
+            ? Html::tag('span', $content, $this->addonOptions)
+            : null;
         if (isset($this->size)) {
             Html::addCssClass($this->containerOptions, 'input-group-' . $this->size);
         }
-        return $this->getInput('textInput') . $addon;
+        switch($this->addonPosition) {
+            default:
+            case 'left':
+                return $addon . $this->getInput('textInput');
+                break;
+
+            case 'right':
+                return $this->getInput('textInput') . $addon;
+                break;
+        }
     }
 
     public function registerAssets()

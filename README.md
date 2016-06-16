@@ -8,12 +8,6 @@ Yii2 Bootstrap 3 components, providing client validated and masked credit card n
 
 Uses client validation courtesy of Stripe (https://github.com/stripe/jquery.payment) and works with validation in ActiveForm.
 
-### The future
-
-1. Integrate first with Braintree and potentially Stripe e.g. any requirements to encode the fields when posting request etc.
-
-2. Language translations
-
 ## Installation
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/). Check the [composer.json](https://github.com/andrewblake1/yii2-credit-card/blob/master/composer.json) for this extension's requirements and dependencies. Read this [web tip /wiki](http://webtips.krajee.com/setting-composer-minimum-stability-application/) on setting the `minimum-stability` settings for your application's composer.json.

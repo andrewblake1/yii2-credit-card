@@ -38,7 +38,7 @@ class CCExpiryValidator extends Validator
         parent::init();
         $this->_msgCat = 'creditcard';
         $this->initI18N(__DIR__);
-        $this->message = Yii::t('creditcard', 'Invalid expiry.');
+        $this->message = Yii::t('creditcard', 'Expiry is invalid.');
     }
 
     public function clientValidateAttribute($model, $attribute, $view)

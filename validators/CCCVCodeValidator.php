@@ -4,7 +4,7 @@
  * @package andrewblake1\yii2-credit-card
  * @license http://opensource.org/licenses/MIT MIT License
  * @link https://github.com/andrewblake1/yii2-credit-card
- * @version 1.0.3
+ * @version 1.1.0
  */
 namespace andrewblake1\creditcard\validators;
 
@@ -38,14 +38,14 @@ class CCCVCodeValidator extends Validator
         parent::init();
         $this->_msgCat = 'creditcard';
         $this->initI18N(__DIR__);
-        $this->message = Yii::t('creditcard', 'Invalid CV code.');
+        $this->message = Yii::t('creditcard', 'CV code is invalid.');
     }
 
     public function clientValidateAttribute($model, $attribute, $view)
     {
         $message = json_encode($this->message, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
         return new JsExpression("
-            if (!$.payment.validateCardCVC(value)) {debugger;
+            if (!$.payment.validateCardCVC(value)) {
                 messages.push($message);
             }
         ");

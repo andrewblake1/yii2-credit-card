@@ -8,6 +8,8 @@ Yii2 Bootstrap 3 components, providing client validated and masked credit card n
 
 Uses client validation courtesy of Stripe (https://github.com/stripe/jquery.payment) and works with validation in ActiveForm.
 
+For PCI compliance, there is the ability to prevent submit of these fields via the `submit` property by excluding the name attribute from the rendered input element.
+
 ## Installation
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/). Check the [composer.json](https://github.com/andrewblake1/yii2-credit-card/blob/master/composer.json) for this extension's requirements and dependencies. Read this [web tip /wiki](http://webtips.krajee.com/setting-composer-minimum-stability-application/) on setting the `minimum-stability` settings for your application's composer.json.
@@ -46,13 +48,13 @@ use andrewblake1\creditcard\CreditCardCVCode;
     <div class="container">
         <div id="card" class="row">
             <div class="col-xs-7">
-                <?= $form->field($bookingForm, 'creditCard_number')->widget(CreditCardNumber::className(), ['name' => 'creditCard_number',]) ?>
+                <?= $form->field($bookingForm, 'creditCard_number')->widget(CreditCardNumber::className(), ['submit' => false,]) ?>
             </div>
             <div class="col-xs-3">
-                <?= $form->field($bookingForm, 'creditCard_expirationDate')->widget(CreditCardExpiry::className(), ['name' => 'creditCard_expirationDate',]) ?>
+                <?= $form->field($bookingForm, 'creditCard_expirationDate')->widget(CreditCardExpiry::className(), ['submit' => false,]) ?>
             </div>
             <div class="col-xs-2">
-                <?= $form->field($bookingForm, 'creditCard_cvv')->widget(CreditCardCVCode::className(), ['name' => 'creditCard_cvv',]) ?>
+                <?= $form->field($bookingForm, 'creditCard_cvv')->widget(CreditCardCVCode::className(), ['submit' => false,]) ?>
             </div>
         </div>
     </div>

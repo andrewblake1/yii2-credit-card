@@ -1,6 +1,13 @@
+version 1.1.1
+=============
+**Date:** 29-Jun-2016
+
+1. Added new "submit" option that when set to false will not add the name attribute into the input.
+2. Refactored to extend form new InputWidget class.
+
 version 1.1.0
 =============
-**Date:** 23-Mar-2016
+**Date:** 17-Jun-2016
 
 1. BC: Changed CreditCardModel for just CreditCard. Re-factored a little within here.
 2. Remove default placeholder from each of the fields as can be added in in standard way within Options.

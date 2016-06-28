@@ -4,7 +4,7 @@
  * @package andrewblake1\yii2-credit-card
  * @license http://opensource.org/licenses/MIT MIT License
  * @link https://github.com/andrewblake1/yii2-credit-card
- * @version 1.1.0
+ * @version 1.1.1
  */
 namespace andrewblake1\creditcard\validators;
 
